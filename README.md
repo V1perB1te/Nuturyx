@@ -1,4 +1,4 @@
-# Zentory
+# Nuturyx
 
 PWA de inventario y facturación con `Next.js 14` + `Supabase` + `Tailwind`, con carrito persistido en `Zustand`, escáner de código de barras y flujo de impresión remota en ticket térmico 80mm.
 

@@ -1,7 +1,7 @@
-# PRD — Zentory
+# PRD — Nuturyx
 
 ## 1) Resumen del producto
-Zentory es una aplicación web de inventario y facturación orientada a operación de punto de venta con impresión de tickets. El sistema permite autenticación por roles, gestión de inventario, creación de facturas con escaneo de códigos de barras, consulta de historial y un centro de impresión automática para facturas pendientes.
+Nuturyx es una aplicación web de inventario y facturación orientada a operación de punto de venta con impresión de tickets. El sistema permite autenticación por roles, gestión de inventario, creación de facturas con escaneo de códigos de barras, consulta de historial y un centro de impresión automática para facturas pendientes.
 
 ## 2) Objetivo
 Centralizar en una sola plataforma el flujo operativo de:

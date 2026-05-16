@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { APP_NAME } from "@/lib/constants";
 
@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: APP_NAME,
   description: "Gestión de inventario y facturación",
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0f766e",
 };
 
 export default function RootLayout({

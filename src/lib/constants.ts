@@ -1,4 +1,4 @@
-export const APP_NAME = "Zentory";
+export const APP_NAME = "Nuturyx";
 
 export const ROLES = {
   ADMIN: "admin",

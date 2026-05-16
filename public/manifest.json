@@ -1,11 +1,11 @@
 {
-  "name": "Zentory",
-  "short_name": "Zentory",
+  "name": "Nuturyx",
+  "short_name": "Nuturyx",
   "description": "Gestión de inventario y facturación",
   "start_url": "/dashboard",
   "display": "standalone",
-  "background_color": "#f1f5f9",
-  "theme_color": "#0f172a",
+  "background_color": "#ecfeff",
+  "theme_color": "#0f766e",
   "lang": "es",
   "icons": [
     {

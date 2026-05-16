@@ -79,7 +79,7 @@ export const useInvoiceCart = create<CartState>()(
       markHydrated: (value) => set({ hasHydrated: value }),
     }),
     {
-      name: "zentory-invoice-cart",
+      name: "nuturyx-invoice-cart",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         items: state.items,

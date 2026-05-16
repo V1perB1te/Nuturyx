@@ -1,4 +1,4 @@
-# Plan de ejecución — Zentory (Nuturyx)
+# Plan de ejecución — Nuturyx
 
 Este plan construye desde cero una PWA de inventario y facturación en `c:\Proyectos\Nutory\Nuturyx` con enfoque de producción, MVP completo, seguridad RLS/RPC en Supabase y una base preparada para Fase 2 de integración bidireccional con Shopify.
 

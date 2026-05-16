@@ -4,10 +4,19 @@
 
 :root {
   --ticket-width: 72mm;
+  --brand-50: #ecfeff;
+  --brand-100: #cffafe;
+  --brand-500: #14b8a6;
+  --brand-600: #0d9488;
+  --brand-700: #0f766e;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.08), transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(13, 148, 136, 0.08), transparent 30%),
+    #f8fafc;
+  @apply text-slate-900;
   -webkit-tap-highlight-color: transparent;
 }
 

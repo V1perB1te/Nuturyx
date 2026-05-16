@@ -20,7 +20,7 @@ export function SignOutButton({ collapsed = false }: { collapsed?: boolean }) {
       title={collapsed ? "Cerrar sesión" : undefined}
       className={`group flex w-full items-center rounded-xl transition-all ${
         collapsed ? "justify-center h-12 w-12 mx-auto" : "gap-3 px-3 py-2.5"
-      } text-red-600 hover:bg-red-50`}
+      } text-red-600 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2`}
     >
       <LogOut className={`shrink-0 ${collapsed ? "h-6 w-6" : "h-5 w-5"}`} />
       {!collapsed && <span className="text-sm font-medium">Cerrar sesión</span>}
