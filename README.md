@@ -11,6 +11,7 @@ PWA de inventario y facturación con `Next.js 14` + `Supabase` + `Tailwind`, con
 - `@zxing/browser` (escaneo por cámara)
 - `react-to-print` (ticket 80mm)
 - `next-pwa`
+- API multicanal (`/api/comercial`, `/api/shopify`, `/api/whatsapp`)
 
 ## Configuración local
 
@@ -32,6 +33,7 @@ copy .env.example .env.local
 NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
+BOT_API_TOKEN=...
 ```
 
 4. Ejecutar migraciones SQL en Supabase (en orden):
@@ -46,6 +48,7 @@ SUPABASE_SERVICE_ROLE_KEY=...
 - `supabase/migrations/20260502_008_realtime_facturas.sql`
 - `supabase/migrations/20260503_009_puede_crear_productos.sql`
 - `supabase/migrations/20260516_010_kardex_costo_promedio.sql`
+- `supabase/migrations/20260516_011_api_multicanal.sql`
 
 5. Ejecutar proyecto:
 
@@ -62,3 +65,23 @@ npm run dev
 - Centro de impresión (`/imprimir`) solo para admin, con cola `pendiente_impresion`, Realtime, ticket 72mm y marcado automático a `impresa`.
 - Historial por rol (admin: todo, vendedor: propio).
 - PWA configurada (`manifest`, `sw`).
+- API backend multicanal para bot (`productos`, `pedidos`, `confirmación`, `estado`, `factura`, `ganancias`).
+
+## API multicanal
+
+### Capa neutral
+- `GET /api/comercial/productos`
+- `GET /api/comercial/productos/:id`
+- `GET /api/comercial/pedidos`
+- `POST /api/comercial/pedidos`
+- `PUT /api/comercial/pedidos/:id/confirmar`
+- `PUT /api/comercial/pedidos/:id/estado`
+- `GET /api/comercial/pedidos/:id/factura`
+- `GET /api/comercial/ganancias`
+
+### Alias compatibles
+- Las mismas rutas están disponibles bajo `/api/shopify/*` y `/api/whatsapp/*`.
+
+### Autenticación API
+- Bot: header `x-bot-token: <BOT_API_TOKEN>` (lectura de catálogo y creación de pedidos).
+- Admin: `Authorization: Bearer <token_supabase>` (confirmar, estado, factura, ganancias).
