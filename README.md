@@ -34,6 +34,8 @@ NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
 BOT_API_TOKEN=...
+SHOPIFY_STORE=tu-tienda.myshopify.com
+SHOPIFY_WEBHOOK_SECRET=...
 ```
 
 4. Ejecutar migraciones SQL en Supabase (en orden):
@@ -81,6 +83,13 @@ npm run dev
 
 ### Alias compatibles
 - Las mismas rutas están disponibles bajo `/api/shopify/*` y `/api/whatsapp/*`.
+
+### Webhook Shopify (MVP de conexión)
+- Endpoint: `POST /api/shopify/webhook`
+- Topics soportados: `orders/create`, `orders/paid`
+- Verificación: firma HMAC con `SHOPIFY_WEBHOOK_SECRET`
+- Validación de tienda: `x-shopify-shop-domain` debe coincidir con `SHOPIFY_STORE`
+- Resultado: crea pedido en `canal=shopify` con idempotencia por `shopify_order_id`
 
 ### Autenticación API
 - Bot: header `x-bot-token: <BOT_API_TOKEN>` (lectura de catálogo y creación de pedidos).
